@@ -13,7 +13,11 @@ public class TopicService {
         new Topic(3,"SpringBoot","SpringBoot Description")
      );
 
-     public List<Topic>getTopic(){
+     public List<Topic>getAllTopics(){
          return topics;
+     }
+
+     public Topic getTopic(String name){
+         return topics.stream().filter(t-> t.getName().equals(name)).findFirst().get();
      }
 }
